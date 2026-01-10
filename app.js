@@ -1,11 +1,11 @@
 /* =========================
    Helpers
 ========================= */
-const $ = (sel, root = document) => root.querySelector(sel);
-const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 
 /* =========================
-   Year auto
+   Año automático (footer)
 ========================= */
 (() => {
   const y = $("#year");
@@ -16,26 +16,24 @@ const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
    Reveal on scroll
 ========================= */
 (() => {
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (prefersReduced) {
-    $$(".reveal").forEach(el => el.classList.add("is-visible"));
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const items = $$(".reveal");
+
+  if (reduce) {
+    items.forEach(el => el.classList.add("is-visible"));
     return;
   }
 
-  const els = $$(".reveal");
-  const io = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("is-visible");
-          io.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add("is-visible");
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
 
-  els.forEach((el) => io.observe(el));
+  items.forEach(el => io.observe(el));
 })();
 
 /* =========================
@@ -45,189 +43,157 @@ const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const bar = $(".scroll-progress__bar");
   if (!bar) return;
 
-  const onScroll = () => {
-    const doc = document.documentElement;
-    const max = doc.scrollHeight - doc.clientHeight;
-    const p = max > 0 ? (doc.scrollTop / max) * 100 : 0;
-    bar.style.width = `${p}%`;
+  const update = () => {
+    const d = document.documentElement;
+    const max = d.scrollHeight - d.clientHeight;
+    const percent = max > 0 ? (d.scrollTop / max) * 100 : 0;
+    bar.style.width = percent + "%";
   };
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  window.addEventListener("scroll", update, { passive: true });
+  update();
 })();
 
 /* =========================
-   Smooth scroll with header offset
+   Smooth scroll con offset del nav
 ========================= */
 (() => {
-  const header = $("#siteNav");
-  const headerH = () => (header ? header.getBoundingClientRect().height : 0);
+  const nav = $("#siteNav");
+  const navH = () => nav ? nav.offsetHeight : 0;
 
-  const isSamePageHash = (href) => href && href.startsWith("#") && href.length > 1;
+  $$("a[href^='#']").forEach(link => {
+    link.addEventListener("click", e => {
+      const id = link.getAttribute("href");
+      if (!id || id === "#") return;
 
-  $$("a[href^='#']").forEach((a) => {
-    a.addEventListener("click", (ev) => {
-      const href = a.getAttribute("href");
-      if (!isSamePageHash(href)) return;
-
-      const target = document.querySelector(href);
+      const target = document.querySelector(id);
       if (!target) return;
 
-      ev.preventDefault();
-      const top = target.getBoundingClientRect().top + window.pageYOffset - headerH() - 10;
-
+      e.preventDefault();
+      const top = target.getBoundingClientRect().top + window.pageYOffset - navH() - 10;
       window.scrollTo({ top, behavior: "smooth" });
-      history.pushState(null, "", href);
+      history.pushState(null, "", id);
     });
   });
 })();
 
 /* =========================
-   Active nav link (scroll spy)
+   Nav activo (scroll spy)
 ========================= */
 (() => {
-  const navLinks = $$(".navlink");
-  if (!navLinks.length) return;
+  const links = $$(".navlink");
+  if (!links.length) return;
 
-  const sections = navLinks
-    .map((a) => document.querySelector(a.getAttribute("href")))
+  const sections = links
+    .map(l => document.querySelector(l.getAttribute("href")))
     .filter(Boolean);
 
-  const setActive = (id) => {
-    navLinks.forEach((a) => {
-      const href = a.getAttribute("href");
-      a.classList.toggle("is-active", href === `#${id}`);
-    });
+  const setActive = id => {
+    links.forEach(l =>
+      l.classList.toggle("is-active", l.getAttribute("href") === `#${id}`)
+    );
   };
 
-  const io = new IntersectionObserver(
-    (entries) => {
-      // Tomar la más visible
-      const visible = entries
-        .filter(e => e.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+  const io = new IntersectionObserver(entries => {
+    const visible = entries
+      .filter(e => e.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-      if (visible && visible.target && visible.target.id) {
-        setActive(visible.target.id);
-      }
-    },
-    { rootMargin: "-35% 0px -55% 0px", threshold: [0.1, 0.2, 0.4, 0.6] }
-  );
+    if (visible && visible.target.id) {
+      setActive(visible.target.id);
+    }
+  }, {
+    rootMargin: "-35% 0px -55% 0px",
+    threshold: [0.1, 0.25, 0.5]
+  });
 
-  sections.forEach((s) => io.observe(s));
+  sections.forEach(s => io.observe(s));
 })();
 
 /* =========================
-   Lightbox (gallery images)
+   Lightbox (galería)
 ========================= */
 (() => {
-  const lb = $("#lightbox");
-  const lbImg = $("#lightboxImg");
-  const lbCap = $("#lightboxCaption");
-  const lbClose = $("#lightboxClose");
+  const box = $("#lightbox");
+  const img = $("#lightboxImg");
+  const cap = $("#lightboxCaption");
+  const closeBtn = $("#lightboxClose");
 
-  if (!lb || !lbImg || !lbClose) return;
+  if (!box || !img || !closeBtn) return;
 
   const open = (src, alt) => {
-    lbImg.src = src;
-    lbImg.alt = alt || "Imagen";
-    if (lbCap) lbCap.textContent = alt || "";
-    lb.classList.add("is-open");
-    lb.setAttribute("aria-hidden", "false");
+    img.src = src;
+    img.alt = alt || "";
+    if (cap) cap.textContent = alt || "";
+    box.classList.add("is-open");
+    box.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
   };
 
   const close = () => {
-    lb.classList.remove("is-open");
-    lb.setAttribute("aria-hidden", "true");
+    box.classList.remove("is-open");
+    box.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
-    // Limpieza para evitar parpadeo en algunas cargas
     setTimeout(() => {
-      lbImg.src = "";
-      if (lbCap) lbCap.textContent = "";
+      img.src = "";
+      if (cap) cap.textContent = "";
     }, 150);
   };
 
-  // Abrir al dar clic en imágenes marcadas
-  $$("img[data-lightbox]").forEach((img) => {
-    img.style.cursor = "zoom-in";
-    img.addEventListener("click", () => open(img.currentSrc || img.src, img.alt));
+  $$("img[data-lightbox]").forEach(i => {
+    i.style.cursor = "zoom-in";
+    i.addEventListener("click", () => open(i.currentSrc || i.src, i.alt));
   });
 
-  // Cerrar
-  lbClose.addEventListener("click", close);
-  lb.addEventListener("click", (e) => {
-    if (e.target === lb) close();
-  });
-
-  window.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && lb.classList.contains("is-open")) close();
+  closeBtn.addEventListener("click", close);
+  box.addEventListener("click", e => { if (e.target === box) close(); });
+  window.addEventListener("keydown", e => {
+    if (e.key === "Escape" && box.classList.contains("is-open")) close();
   });
 })();
 
 /* =========================
-   Tilt 3D effect (no library)
-   Applies to elements with [data-tilt]
+   Tilt 3D (sin librerías)
 ========================= */
 (() => {
-  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (prefersReduced) return;
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) return;
 
-  const tiltEls = $$("[data-tilt]");
-  if (!tiltEls.length) return;
+  const els = $$("[data-tilt]");
+  if (!els.length) return;
 
   const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
 
-  tiltEls.forEach((el) => {
-    let rect = null;
-    let raf = null;
+  els.forEach(el => {
+    let rect;
 
-    const maxRotate = 10; // grados
-    const maxTranslate = 6; // px
+    const maxRotate = 10;
+    const maxMove = 6;
 
-    const onEnter = () => {
-      rect = el.getBoundingClientRect();
-      el.classList.add("tilting");
-    };
+    const enter = () => rect = el.getBoundingClientRect();
+    const leave = () => el.style.transform = "";
 
-    const onLeave = () => {
-      el.classList.remove("tilting");
-      el.style.transform = "";
-      el.style.setProperty("--gx", "50%");
-      el.style.setProperty("--gy", "50%");
-    };
-
-    const onMove = (ev) => {
+    const move = e => {
       if (!rect) rect = el.getBoundingClientRect();
-      const x = ev.clientX - rect.left;
-      const y = ev.clientY - rect.top;
 
-      const px = clamp(x / rect.width, 0, 1);
-      const py = clamp(y / rect.height, 0, 1);
+      const x = clamp((e.clientX - rect.left) / rect.width, 0, 1);
+      const y = clamp((e.clientY - rect.top) / rect.height, 0, 1);
 
-      const rx = (py - 0.5) * -maxRotate;
-      const ry = (px - 0.5) * maxRotate;
+      const rx = (y - 0.5) * -maxRotate;
+      const ry = (x - 0.5) * maxRotate;
+      const tx = (x - 0.5) * maxMove;
+      const ty = (y - 0.5) * maxMove;
 
-      const tx = (px - 0.5) * maxTranslate;
-      const ty = (py - 0.5) * maxTranslate;
-
-      // Guardamos para un highlight con CSS (si lo usas)
-      el.style.setProperty("--gx", `${px * 100}%`);
-      el.style.setProperty("--gy", `${py * 100}%`);
-
-      if (raf) cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        el.style.transform = `translate3d(${tx}px, ${ty}px, 0) rotateX(${rx}deg) rotateY(${ry}deg)`;
-      });
+      el.style.transform = `
+        translate3d(${tx}px, ${ty}px, 0)
+        rotateX(${rx}deg)
+        rotateY(${ry}deg)
+      `;
     };
 
-    el.addEventListener("mouseenter", onEnter);
-    el.addEventListener("mouseleave", onLeave);
-    el.addEventListener("mousemove", onMove, { passive: true });
-
-    // Recalcular rect si cambia tamaño
-    window.addEventListener("resize", () => {
-      rect = null;
-    });
+    el.addEventListener("mouseenter", enter);
+    el.addEventListener("mouseleave", leave);
+    el.addEventListener("mousemove", move, { passive: true });
+    window.addEventListener("resize", () => rect = null);
   });
 })();

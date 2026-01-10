@@ -10,12 +10,11 @@
 </head>
 
 <body>
-  <!-- Background decor (solo HTML; el efecto lo hace CSS) -->
+  <!-- Background decor -->
   <div class="bg" aria-hidden="true">
     <div class="bg__grid"></div>
     <div class="bg__blob bg__blob--a"></div>
     <div class="bg__blob bg__blob--b"></div>
-    <div class="bg__noise"></div>
   </div>
 
   <!-- Nav -->
@@ -28,6 +27,7 @@
 
       <nav class="nav__links" aria-label="Navegación">
         <a href="#proyectos">Proyectos</a>
+        <a href="#galeria">Galería</a>
         <a href="#habilidades">Habilidades</a>
         <a href="#contacto">Contacto</a>
       </nav>
@@ -39,20 +39,21 @@
     </div>
   </header>
 
-  <!-- Hero -->
   <main id="top" class="container">
-    <section class="hero">
+    <!-- HERO con imagen -->
+    <section class="hero hero--withImage">
       <div class="hero__left">
         <p class="kicker reveal">Portafolio · TIC</p>
 
         <h1 class="hero__title reveal">
           Soporte IT, Web básico y Diseño Digital
-          <span class="hero__titleAccent">con enfoque profesional.</span>
+          <span class="hero__titleAccent">con un enfoque profesional.</span>
         </h1>
 
         <p class="hero__subtitle reveal">
           Soy <strong>Gabriel Antonio</strong>, estudiante de Ingeniería en Tecnologías de la Información.
-          Me enfoco en soporte y mantenimiento, soluciones prácticas, y contenido digital (PowerPoint, video y 3D CAD).
+          Me enfoco en soporte y mantenimiento, soluciones prácticas y contenido digital
+          (PowerPoint, video y 3D CAD).
         </p>
 
         <div class="hero__badges reveal">
@@ -67,66 +68,32 @@
           <a class="btn btn--primary" href="#proyectos">Ver proyectos</a>
           <a class="btn btn--ghost" href="#contacto">Contactarme</a>
         </div>
-
-        <div class="hero__stats reveal" role="list" aria-label="Resumen rápido">
-          <div class="stat" role="listitem">
-            <div class="stat__value">Remoto</div>
-            <div class="stat__label">Modalidad</div>
-          </div>
-          <div class="stat" role="listitem">
-            <div class="stat__value">Por proyectos</div>
-            <div class="stat__label">Experiencia</div>
-          </div>
-          <div class="stat" role="listitem">
-            <div class="stat__value">TIC</div>
-            <div class="stat__label">Enfoque</div>
-          </div>
-        </div>
       </div>
 
-      <aside class="hero__right reveal" aria-label="Tarjeta de perfil">
-        <div class="card card--profile">
-          <div class="card__top">
-            <div class="avatar" aria-hidden="true">
-              <span>GA</span>
-            </div>
-            <div>
-              <p class="card__name">Gabriel Antonio</p>
-              <p class="card__role">Estudiante · Tecnologías de la Información</p>
-            </div>
-          </div>
-
-          <div class="card__content">
-            <p class="muted">
-              Interés en soporte IT, sistemas (básico), web básica y diseño digital aplicado a comunicación visual.
-            </p>
-
-            <div class="card__buttons">
-              <a class="btn btn--primary btn--full" href="TU_LINK_CV_PDF" target="_blank" rel="noopener">📄 Ver CV</a>
-              <a class="btn btn--ghost btn--full" href="TU_LINK_VIDEO" target="_blank" rel="noopener">🎥 Ver Video</a>
-            </div>
-
-            <div class="card__links">
-              <a href="https://github.com/Gabrieltics" target="_blank" rel="noopener">GitHub</a>
-              <span class="dot">•</span>
-              <a href="https://gabrieltics.github.io" target="_blank" rel="noopener">Sitio</a>
-              <span class="dot">•</span>
-              <a href="#contacto">Contacto</a>
-            </div>
-          </div>
-        </div>
+      <aside class="hero__right reveal">
+        <figure class="heroMedia">
+          <!-- Cambia la imagen por la tuya -->
+          <img src="assets/hero.jpg" alt="Imagen representativa del portafolio de Gabriel Antonio" loading="lazy">
+          <figcaption class="heroMedia__caption">
+            TIC · Soporte IT · Diseño Digital
+          </figcaption>
+        </figure>
       </aside>
     </section>
 
-    <!-- Proyectos -->
+    <!-- PROYECTOS con thumbnails -->
     <section id="proyectos" class="section">
       <div class="section__head reveal">
         <h2 class="section__title">Proyectos</h2>
-        <p class="section__subtitle">Evidencias concretas alineadas a Informática, Software (básico) y Diseño Digital.</p>
+        <p class="section__subtitle">Cada tarjeta incluye imagen/thumbnail. Cambia las imágenes por las tuyas.</p>
       </div>
 
       <div class="cards">
+        <!-- IT -->
         <article class="card card--project reveal">
+          <div class="thumb">
+            <img src="assets/it.jpg" alt="Soporte y mantenimiento IT" loading="lazy">
+          </div>
           <div class="card__meta">
             <span class="pill">Informática</span>
             <span class="pill pill--soft">Soporte IT</span>
@@ -141,7 +108,11 @@
           </div>
         </article>
 
+        <!-- WEB -->
         <article class="card card--project reveal">
+          <div class="thumb">
+            <img src="assets/web.jpg" alt="Portafolio web personal" loading="lazy">
+          </div>
           <div class="card__meta">
             <span class="pill">Software</span>
             <span class="pill pill--soft">HTML/CSS</span>
@@ -157,7 +128,11 @@
           </div>
         </article>
 
+        <!-- PPT -->
         <article class="card card--project reveal">
+          <div class="thumb">
+            <img src="assets/ppt.jpg" alt="Presentaciones profesionales en PowerPoint" loading="lazy">
+          </div>
           <div class="card__meta">
             <span class="pill">Diseño Digital</span>
             <span class="pill pill--soft">PowerPoint</span>
@@ -171,34 +146,69 @@
           </div>
         </article>
 
+        <!-- VIDEO -->
         <article class="card card--project reveal">
+          <div class="thumb">
+            <img src="assets/video.jpg" alt="Edición de video con CapCut" loading="lazy">
+          </div>
           <div class="card__meta">
             <span class="pill">Diseño Digital</span>
             <span class="pill pill--soft">CapCut</span>
           </div>
           <h3 class="card__title">Edición de video</h3>
           <p class="card__text">
-            Edición de video corto: cortes, transiciones, texto, audio y exportación optimizada para contenido digital.
+            Edición de video corto: cortes, transiciones, texto, audio y exportación optimizada.
           </p>
           <div class="card__actions">
             <a class="link" href="TU_LINK_VIDEO_CAPCUT" target="_blank" rel="noopener">Ver video →</a>
           </div>
         </article>
 
+        <!-- CAD -->
         <article class="card card--project reveal">
+          <div class="thumb">
+            <img src="assets/cad.jpg" alt="Modelado 3D en CAD" loading="lazy">
+          </div>
           <div class="card__meta">
             <span class="pill">3D</span>
             <span class="pill pill--soft">CAD</span>
           </div>
           <h3 class="card__title">Modelado 3D (CAD)</h3>
           <p class="card__text">
-            Modelado y visualización 3D en software CAD. Evidencias con capturas y renders.
+            Modelado y visualización 3D. Evidencias con capturas y renders.
           </p>
           <div class="card__actions">
             <a class="link" href="TU_LINK_3D" target="_blank" rel="noopener">Ver renders →</a>
           </div>
         </article>
       </div>
+    </section>
+
+    <!-- GALERÍA (para imágenes extra) -->
+    <section id="galeria" class="section">
+      <div class="section__head reveal">
+        <h2 class="section__title">Galería</h2>
+        <p class="section__subtitle">Imágenes extra de tus proyectos (capturas, renders, slides). Súbelas a /assets.</p>
+      </div>
+
+      <div class="gallery">
+        <figure class="gallery__item reveal">
+          <img src="assets/galeria-1.jpg" alt="Captura de proyecto 1" loading="lazy">
+        </figure>
+        <figure class="gallery__item reveal">
+          <img src="assets/galeria-2.jpg" alt="Captura de proyecto 2" loading="lazy">
+        </figure>
+        <figure class="gallery__item reveal">
+          <img src="assets/galeria-3.jpg" alt="Captura de proyecto 3" loading="lazy">
+        </figure>
+        <figure class="gallery__item reveal">
+          <img src="assets/galeria-4.jpg" alt="Captura de proyecto 4" loading="lazy">
+        </figure>
+      </div>
+
+      <p class="note reveal">
+        Tip: si aún no tienes estas imágenes, puedes borrar esta sección o dejarla y subirlas después.
+      </p>
     </section>
 
     <!-- Habilidades -->

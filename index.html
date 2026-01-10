@@ -1,164 +1,288 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gabriel Antonio | Portafolio</title>
-  <meta name="description" content="Portafolio de Gabriel Antonio. Estudiante de TIC con enfoque en soporte IT, desarrollo web básico y diseño digital.">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Portafolio de Gabriel Antonio. TIC: soporte IT, web básico y diseño digital." />
+  <meta name="theme-color" content="#0b1220" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
+  <!-- Background decor (solo HTML; el efecto lo hace CSS) -->
+  <div class="bg" aria-hidden="true">
+    <div class="bg__grid"></div>
+    <div class="bg__blob bg__blob--a"></div>
+    <div class="bg__blob bg__blob--b"></div>
+    <div class="bg__noise"></div>
+  </div>
 
-  <header>
-    <div class="container">
-      <h1>Gabriel Antonio</h1>
-      <p class="subtitle">Estudiante de Ingeniería en Tecnologías de la Información · Portafolio</p>
+  <!-- Nav -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="Inicio">
+        <span class="brand__mark">G</span>
+        <span class="brand__text">Gabriel Antonio</span>
+      </a>
 
-      <div class="pill-row">
-        <span class="badge">Soporte IT</span>
-        <span class="badge">Windows / Linux</span>
-        <span class="badge">Office (PowerPoint)</span>
-        <span class="badge">Web (HTML/CSS básico)</span>
-        <span class="badge">Diseño Digital</span>
-        <span class="badge">Modelado 3D (CAD)</span>
-      </div>
+      <nav class="nav__links" aria-label="Navegación">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
 
-      <div class="cta-row">
-        <a class="btn" href="TU_LINK_CV_PDF" target="_blank" rel="noopener">📄 CV (PDF)</a>
-        <a class="btn btn-outline" href="TU_LINK_VIDEO" target="_blank" rel="noopener">🎥 Video (Paso 2)</a>
-        <a class="btn btn-outline" href="#contacto">✉️ Contacto</a>
+      <div class="nav__cta">
+        <a class="btn btn--ghost" href="TU_LINK_CV_PDF" target="_blank" rel="noopener">CV</a>
+        <a class="btn btn--primary" href="TU_LINK_VIDEO" target="_blank" rel="noopener">Video</a>
       </div>
     </div>
   </header>
 
-  <main class="container">
+  <!-- Hero -->
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="hero__left">
+        <p class="kicker reveal">Portafolio · TIC</p>
 
-    <section>
-      <h2>Perfil</h2>
-      <p>
-        Estudiante de TIC con enfoque en soporte y mantenimiento de equipos, configuración básica de sistemas y uso de
-        herramientas digitales para crear soluciones prácticas. Experiencia por proyectos en presentaciones profesionales
-        (PowerPoint), edición de video y modelado 3D. Me caracterizo por la responsabilidad, comunicación clara y
-        aprendizaje continuo.
-      </p>
+        <h1 class="hero__title reveal">
+          Soporte IT, Web básico y Diseño Digital
+          <span class="hero__titleAccent">con enfoque profesional.</span>
+        </h1>
+
+        <p class="hero__subtitle reveal">
+          Soy <strong>Gabriel Antonio</strong>, estudiante de Ingeniería en Tecnologías de la Información.
+          Me enfoco en soporte y mantenimiento, soluciones prácticas, y contenido digital (PowerPoint, video y 3D CAD).
+        </p>
+
+        <div class="hero__badges reveal">
+          <span class="chip">Soporte IT</span>
+          <span class="chip">Windows / Linux</span>
+          <span class="chip">PowerPoint</span>
+          <span class="chip">HTML/CSS (básico)</span>
+          <span class="chip">3D CAD</span>
+        </div>
+
+        <div class="hero__actions reveal">
+          <a class="btn btn--primary" href="#proyectos">Ver proyectos</a>
+          <a class="btn btn--ghost" href="#contacto">Contactarme</a>
+        </div>
+
+        <div class="hero__stats reveal" role="list" aria-label="Resumen rápido">
+          <div class="stat" role="listitem">
+            <div class="stat__value">Remoto</div>
+            <div class="stat__label">Modalidad</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="stat__value">Por proyectos</div>
+            <div class="stat__label">Experiencia</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="stat__value">TIC</div>
+            <div class="stat__label">Enfoque</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero__right reveal" aria-label="Tarjeta de perfil">
+        <div class="card card--profile">
+          <div class="card__top">
+            <div class="avatar" aria-hidden="true">
+              <span>GA</span>
+            </div>
+            <div>
+              <p class="card__name">Gabriel Antonio</p>
+              <p class="card__role">Estudiante · Tecnologías de la Información</p>
+            </div>
+          </div>
+
+          <div class="card__content">
+            <p class="muted">
+              Interés en soporte IT, sistemas (básico), web básica y diseño digital aplicado a comunicación visual.
+            </p>
+
+            <div class="card__buttons">
+              <a class="btn btn--primary btn--full" href="TU_LINK_CV_PDF" target="_blank" rel="noopener">📄 Ver CV</a>
+              <a class="btn btn--ghost btn--full" href="TU_LINK_VIDEO" target="_blank" rel="noopener">🎥 Ver Video</a>
+            </div>
+
+            <div class="card__links">
+              <a href="https://github.com/Gabrieltics" target="_blank" rel="noopener">GitHub</a>
+              <span class="dot">•</span>
+              <a href="https://gabrieltics.github.io" target="_blank" rel="noopener">Sitio</a>
+              <span class="dot">•</span>
+              <a href="#contacto">Contacto</a>
+            </div>
+          </div>
+        </div>
+      </aside>
     </section>
 
-    <section>
-      <h2>Proyectos</h2>
+    <!-- Proyectos -->
+    <section id="proyectos" class="section">
+      <div class="section__head reveal">
+        <h2 class="section__title">Proyectos</h2>
+        <p class="section__subtitle">Evidencias concretas alineadas a Informática, Software (básico) y Diseño Digital.</p>
+      </div>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>Soporte y mantenimiento IT</h3>
-          <span class="tag">Informática</span>
-        </div>
-        <p>
-          Mantenimiento preventivo y correctivo de PC: diagnóstico y optimización, limpieza, instalación/configuración de
-          software, actualización de componentes (RAM, HDD/SSD) y soporte a usuario final. Configuración de sistemas
-          operativos Windows y Linux (nivel básico).
-        </p>
-        <p class="links">
-          <a href="TU_LINK_PROYECTO_IT" target="_blank" rel="noopener">Ver evidencia (PDF / Drive)</a>
-        </p>
-      </article>
+      <div class="cards">
+        <article class="card card--project reveal">
+          <div class="card__meta">
+            <span class="pill">Informática</span>
+            <span class="pill pill--soft">Soporte IT</span>
+          </div>
+          <h3 class="card__title">Soporte y mantenimiento IT</h3>
+          <p class="card__text">
+            Diagnóstico, optimización, limpieza, instalación/configuración de software y actualización de componentes
+            (RAM, HDD/SSD). Soporte a usuario final.
+          </p>
+          <div class="card__actions">
+            <a class="link" href="TU_LINK_PROYECTO_IT" target="_blank" rel="noopener">Ver evidencia →</a>
+          </div>
+        </article>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>Portafolio web (HTML/CSS básico)</h3>
-          <span class="tag">Software</span>
-        </div>
-        <p>
-          Sitio web de una página desarrollado con HTML y CSS (nivel básico) para presentar perfil, proyectos y contacto
-          de forma clara y profesional.
-        </p>
-        <p class="links">
-          <a href="https://gabrieltics.github.io" target="_blank" rel="noopener">Abrir sitio</a>
-          · <a href="TU_LINK_REPO" target="_blank" rel="noopener">Ver repositorio</a>
-        </p>
-      </article>
+        <article class="card card--project reveal">
+          <div class="card__meta">
+            <span class="pill">Software</span>
+            <span class="pill pill--soft">HTML/CSS</span>
+          </div>
+          <h3 class="card__title">Portafolio web personal</h3>
+          <p class="card__text">
+            Landing de una página desarrollada con HTML y CSS (nivel básico) para mostrar perfil, proyectos y contacto.
+          </p>
+          <div class="card__actions">
+            <a class="link" href="https://gabrieltics.github.io" target="_blank" rel="noopener">Abrir sitio →</a>
+            <span class="sep">·</span>
+            <a class="link" href="https://github.com/Gabrieltics/gabrieltics.github.io" target="_blank" rel="noopener">Repositorio →</a>
+          </div>
+        </article>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>Presentaciones profesionales (PowerPoint)</h3>
-          <span class="tag">Diseño Digital</span>
-        </div>
-        <p>
-          Diseño de presentaciones con estructura, jerarquía visual y enfoque en claridad del mensaje. Ajuste de
-          tipografías, estilos y recursos visuales para una comunicación efectiva.
-        </p>
-        <p class="links">
-          <a href="TU_LINK_PRESENTACION" target="_blank" rel="noopener">Ver presentación</a>
-        </p>
-      </article>
+        <article class="card card--project reveal">
+          <div class="card__meta">
+            <span class="pill">Diseño Digital</span>
+            <span class="pill pill--soft">PowerPoint</span>
+          </div>
+          <h3 class="card__title">Presentaciones profesionales</h3>
+          <p class="card__text">
+            Diseño de presentaciones con jerarquía visual, estructura clara y enfoque en comunicación efectiva.
+          </p>
+          <div class="card__actions">
+            <a class="link" href="TU_LINK_PRESENTACION" target="_blank" rel="noopener">Ver presentación →</a>
+          </div>
+        </article>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>Edición de video (CapCut)</h3>
-          <span class="tag">Diseño Digital</span>
-        </div>
-        <p>
-          Edición de video corto: cortes, transiciones, texto, audio y exportación optimizada para contenido digital.
-        </p>
-        <p class="links">
-          <a href="TU_LINK_VIDEO_CAPCUT" target="_blank" rel="noopener">Ver video</a>
-        </p>
-      </article>
+        <article class="card card--project reveal">
+          <div class="card__meta">
+            <span class="pill">Diseño Digital</span>
+            <span class="pill pill--soft">CapCut</span>
+          </div>
+          <h3 class="card__title">Edición de video</h3>
+          <p class="card__text">
+            Edición de video corto: cortes, transiciones, texto, audio y exportación optimizada para contenido digital.
+          </p>
+          <div class="card__actions">
+            <a class="link" href="TU_LINK_VIDEO_CAPCUT" target="_blank" rel="noopener">Ver video →</a>
+          </div>
+        </article>
 
-      <article class="project">
-        <div class="project-head">
-          <h3>Modelado 3D (CAD)</h3>
-          <span class="tag">3D</span>
-        </div>
-        <p>
-          Modelado 3D en software CAD como práctica técnica y de visualización. Evidencias con capturas/renders.
-        </p>
-        <p class="links">
-          <a href="TU_LINK_3D" target="_blank" rel="noopener">Ver renders / imágenes</a>
-        </p>
-      </article>
-
+        <article class="card card--project reveal">
+          <div class="card__meta">
+            <span class="pill">3D</span>
+            <span class="pill pill--soft">CAD</span>
+          </div>
+          <h3 class="card__title">Modelado 3D (CAD)</h3>
+          <p class="card__text">
+            Modelado y visualización 3D en software CAD. Evidencias con capturas y renders.
+          </p>
+          <div class="card__actions">
+            <a class="link" href="TU_LINK_3D" target="_blank" rel="noopener">Ver renders →</a>
+          </div>
+        </article>
+      </div>
     </section>
 
-    <section>
-      <h2>Habilidades</h2>
-      <div class="grid">
-        <div class="card">
-          <h4>Soporte IT</h4>
-          <p>Mantenimiento de PC, instalación/configuración de software, diagnóstico y optimización.</p>
+    <!-- Habilidades -->
+    <section id="habilidades" class="section">
+      <div class="section__head reveal">
+        <h2 class="section__title">Habilidades</h2>
+        <p class="section__subtitle">Resumen directo y honesto (nivel junior / en formación).</p>
+      </div>
+
+      <div class="cards cards--skills">
+        <div class="card card--skill reveal">
+          <h3 class="card__title">Soporte IT</h3>
+          <p class="card__text">Mantenimiento de PC, instalación/configuración, diagnóstico y optimización.</p>
         </div>
-        <div class="card">
-          <h4>Sistemas</h4>
-          <p>Windows · Linux (básico) · uso de herramientas y configuración inicial.</p>
+
+        <div class="card card--skill reveal">
+          <h3 class="card__title">Sistemas</h3>
+          <p class="card__text">Windows · Linux (básico) · configuración inicial y uso de herramientas.</p>
         </div>
-        <div class="card">
-          <h4>Herramientas</h4>
-          <p>Microsoft Office (especialmente PowerPoint) · trabajo remoto · atención a clientes.</p>
+
+        <div class="card card--skill reveal">
+          <h3 class="card__title">Herramientas</h3>
+          <p class="card__text">Microsoft Office (PowerPoint) · documentación · trabajo remoto.</p>
         </div>
-        <div class="card">
-          <h4>Web (básico)</h4>
-          <p>HTML y CSS básicos para estructura y estilos sencillos.</p>
+
+        <div class="card card--skill reveal">
+          <h3 class="card__title">Web (básico)</h3>
+          <p class="card__text">HTML y CSS básicos para estructura y estilos sencillos.</p>
         </div>
       </div>
     </section>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>
-        Correo: <a href="mailto:TU_CORREO">TU_CORREO</a><br>
-        Sitio: <a href="https://gabrieltics.github.io" target="_blank" rel="noopener">gabrieltics.github.io</a><br>
-        GitHub: <a href="https://github.com/Gabrieltics" target="_blank" rel="noopener">github.com/Gabrieltics</a><br>
-        (Opcional) LinkedIn: <a href="TU_LINK_LINKEDIN" target="_blank" rel="noopener">TU_LINK_LINKEDIN</a>
-      </p>
-      <p class="note">
-        *Evidencias y archivos disponibles en los enlaces de proyectos.
-      </p>
+    <!-- Contacto -->
+    <section id="contacto" class="section">
+      <div class="section__head reveal">
+        <h2 class="section__title">Contacto</h2>
+        <p class="section__subtitle">Disponible para prácticas/residencias y proyectos remotos.</p>
+      </div>
+
+      <div class="card card--contact reveal">
+        <div class="contact__row">
+          <div>
+            <p class="muted">Correo</p>
+            <p class="contact__value"><a href="mailto:TU_CORREO">TU_CORREO</a></p>
+          </div>
+          <div>
+            <p class="muted">GitHub</p>
+            <p class="contact__value"><a href="https://github.com/Gabrieltics" target="_blank" rel="noopener">github.com/Gabrieltics</a></p>
+          </div>
+          <div>
+            <p class="muted">Sitio</p>
+            <p class="contact__value"><a href="https://gabrieltics.github.io" target="_blank" rel="noopener">gabrieltics.github.io</a></p>
+          </div>
+        </div>
+
+        <p class="note">
+          *Evidencias (PDF/Drive) disponibles en los enlaces de proyectos.
+        </p>
+      </div>
     </section>
 
+    <footer class="footer">
+      <p>© 2026 Gabriel Antonio · Portafolio</p>
+    </footer>
   </main>
 
-  <footer>
-    <p>© 2026 Gabriel Antonio · Portafolio</p>
-  </footer>
+  <!-- Animaciones (reveal on scroll) -->
+  <script>
+    (function () {
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (prefersReduced) return;
 
+      const els = document.querySelectorAll(".reveal");
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("is-visible");
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
 </body>
 </html>

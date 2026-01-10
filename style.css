@@ -1,12 +1,15 @@
+/* ===== Reset básico ===== */
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/* ===== Base ===== */
 body {
-  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #0f172a;
-  color: #e2e8f0;
+  background-color: #0f172a; /* azul oscuro */
+  color: #e5e7eb; /* gris claro */
   line-height: 1.6;
 }
 
@@ -19,62 +22,175 @@ a:hover {
   text-decoration: underline;
 }
 
-header {
-  background: rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 48px 16px 32px;
-}
-
+/* ===== Layout ===== */
 .container {
-  max-width: 900px;
-  margin: auto;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
 }
 
-h1 {
-  margin: 0;
+/* ===== Header ===== */
+header {
+  background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 48px 0 36px;
+}
+
+header h1 {
   font-size: 36px;
+  font-weight: bold;
 }
 
 .subtitle {
   margin-top: 8px;
   color: #cbd5e1;
+  font-size: 18px;
+}
+
+/* ===== Badges ===== */
+.pill-row {
+  margin-top: 14px;
 }
 
 .badge {
   display: inline-block;
-  margin-top: 12px;
+  margin-right: 8px;
+  margin-top: 6px;
   padding: 6px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
   font-size: 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.2);
   color: #cbd5e1;
+  background-color: rgba(255,255,255,0.03);
 }
 
+/* ===== Botones ===== */
+.cta-row {
+  margin-top: 22px;
+}
+
+.btn {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  padding: 10px 16px;
+  background-color: #2563eb;
+  color: #ffffff;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #1d4ed8;
+  text-decoration: none;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid #2563eb;
+  color: #93c5fd;
+}
+
+.btn-outline:hover {
+  background-color: rgba(37, 99, 235, 0.15);
+}
+
+/* ===== Main ===== */
 main {
-  padding: 32px 16px;
+  padding: 40px 0;
 }
 
 section {
-  margin-bottom: 32px;
+  margin-bottom: 40px;
 }
 
 h2 {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 26px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
   padding-bottom: 6px;
 }
 
-.project {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  padding: 16px;
-  margin-top: 16px;
+p {
+  color: #d1d5db;
 }
 
-footer {
-  text-align: center;
-  padding: 24px 16px;
+/* ===== Proyectos ===== */
+.project {
+  background-color: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 18px;
+}
+
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.project h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.tag {
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+}
+
+.links {
+  margin-top: 8px;
+}
+
+/* ===== Grid (habilidades) ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background-color: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.card h4 {
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+/* ===== Nota ===== */
+.note {
+  margin-top: 8px;
   font-size: 14px;
-  color: #94a3b8;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #9ca3af;
+}
+
+/* ===== Footer ===== */
+footer {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 24px 16px;
+  text-align: center;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
 }

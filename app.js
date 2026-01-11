@@ -197,3 +197,47 @@ const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
     window.addEventListener("resize", () => rect = null);
   });
 })();
+
+
+/* =========================
+   HERO IMAGE SLIDER
+========================= */
+(() => {
+  const slides = [
+    "assets/hero-1.jpg",
+    "assets/hero-2.jpg",
+    "assets/hero-3.jpg"
+  ];
+
+  const img = document.getElementById("heroSlide");
+  if (!img) return;
+
+  const prev = document.querySelector(".sliderBtn--prev");
+  const next = document.querySelector(".sliderBtn--next");
+
+  let index = 0;
+
+  const show = (i) => {
+    img.style.opacity = 0;
+    setTimeout(() => {
+      img.src = slides[i];
+      img.style.opacity = 1;
+    }, 200);
+  };
+
+  prev.addEventListener("click", () => {
+    index = (index - 1 + slides.length) % slides.length;
+    show(index);
+  });
+
+  next.addEventListener("click", () => {
+    index = (index + 1) % slides.length;
+    show(index);
+  });
+
+  /* Auto slide (opcional, elegante) */
+  setInterval(() => {
+    index = (index + 1) % slides.length;
+    show(index);
+  }, 6000);
+})();

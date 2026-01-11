@@ -200,7 +200,7 @@ const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 
 
 /* =========================
-   HERO IMAGE SLIDER
+   HERO IMAGE SLIDER (FIXED)
 ========================= */
 (() => {
   const slides = [
@@ -216,6 +216,8 @@ const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const next = document.querySelector(".sliderBtn--next");
 
   let index = 0;
+  let autoSlide = null;
+  const DELAY = 6000; // 6 segundos
 
   const show = (i) => {
     img.style.opacity = 0;
@@ -225,19 +227,30 @@ const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
     }, 200);
   };
 
+  const startAutoSlide = () => {
+    stopAutoSlide();
+    autoSlide = setInterval(() => {
+      index = (index + 1) % slides.length;
+      show(index);
+    }, DELAY);
+  };
+
+  const stopAutoSlide = () => {
+    if (autoSlide) clearInterval(autoSlide);
+  };
+
   prev.addEventListener("click", () => {
     index = (index - 1 + slides.length) % slides.length;
     show(index);
+    startAutoSlide(); // 🔥 reinicia contador
   });
 
   next.addEventListener("click", () => {
     index = (index + 1) % slides.length;
     show(index);
+    startAutoSlide(); // 🔥 reinicia contador
   });
 
-  /* Auto slide (opcional, elegante) */
-  setInterval(() => {
-    index = (index + 1) % slides.length;
-    show(index);
-  }, 6000);
+  // iniciar automático
+  startAutoSlide();
 })();

@@ -98,13 +98,22 @@
       </div>
 
       <aside class="hero__right reveal">
-        <figure class="heroMedia tilt" data-tilt>
-          <img src="assets/hero.jpg" alt="Imagen" loading="lazy">
-          <figcaption class="heroMedia__caption">
-            Listo para prácticas/Trabajos · Proyectos con evidencias
-          </figcaption>
-        </figure>
+        <div class="heroSlider tilt" data-tilt>
+          <button class="sliderBtn sliderBtn--prev" aria-label="Anterior">‹</button>
+      
+          <img id="heroSlide"
+               src="assets/hero-1.jpg"
+               alt="Proyecto destacado"
+               loading="lazy">
+      
+          <button class="sliderBtn sliderBtn--next" aria-label="Siguiente">›</button>
+      
+          <div class="heroMedia__caption">
+            Proyectos con evidencias · Soporte IT · Diseño Digital
+          </div>
+        </div>
       </aside>
+
     </section>
 
     <!-- PROYECTOS -->

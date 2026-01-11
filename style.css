@@ -645,6 +645,55 @@ a:hover{ text-decoration:underline; }
 }
 
 /* =========================
+   HERO SLIDER
+========================= */
+.heroSlider{
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  box-shadow: var(--shadow);
+}
+
+.heroSlider img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  display:block;
+  transition: opacity .4s ease, transform .6s ease;
+}
+
+.sliderBtn{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:42px;
+  height:42px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);
+  background: rgba(11,18,32,.65);
+  color:#fff;
+  font-size:26px;
+  cursor:pointer;
+  z-index:5;
+  backdrop-filter: blur(10px);
+}
+
+.sliderBtn:hover{
+  background: rgba(255,255,255,.12);
+}
+
+.sliderBtn--prev{ left:12px; }
+.sliderBtn--next{ right:12px; }
+
+.heroSlider:hover img{
+  transform: scale(1.05);
+}
+
+
+
+/* =========================
    ACCESSIBILITY
 ========================= */
 @media (prefers-reduced-motion: reduce){

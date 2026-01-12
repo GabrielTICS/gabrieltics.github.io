@@ -935,3 +935,89 @@ a:hover{ text-decoration:underline; }
 .lightbox__close:hover{
   background: rgba(255,255,255,.12);
 }
+
+
+/* =========================
+   Mantenimiento - Pasos
+========================= */
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 24px;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.02)
+  );
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 20px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.step:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* Imagen */
+.step__media {
+  display: block;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.step__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.step__media:hover img {
+  transform: scale(1.04);
+}
+
+/* Contenido */
+.step__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #eaf1ff;
+}
+
+.step__text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(234,241,255,0.85);
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 900px) {
+  .step {
+    grid-template-columns: 1fr;
+  }
+
+  .step__media {
+    order: -1;
+  }
+}
+

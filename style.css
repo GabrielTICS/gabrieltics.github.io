@@ -731,11 +731,10 @@ a:hover{ text-decoration:underline; }
 
 /* =========================
    CAD PAGE (cad.html)
-   Pegar al final de style.css
 ========================= */
 
 .page{
-  padding-top: 110px; /* deja espacio para tu nav fijo */
+  padding-top: 110px; 
 }
 
 /* Kicker (texto pequeño arriba del título) */
@@ -886,7 +885,7 @@ a:hover{ text-decoration:underline; }
   .cta__actions{ justify-content:flex-start; }
 }
 
-/* Lightbox (por si tu CSS no lo tenía completo) */
+/* Lightbox */
 .lightbox{
   position: fixed;
   inset: 0;

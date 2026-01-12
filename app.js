@@ -204,9 +204,9 @@ const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 ========================= */
 (() => {
   const slides = [
-    "assets/hero-1.jpg",
-    "assets/hero-2.jpg",
-    "assets/hero-3.jpg"
+    "assets/hero-1.webp",
+    "assets/hero-2.webp",
+    "assets/hero-3.webp"
   ];
 
   const img = document.getElementById("heroSlide");

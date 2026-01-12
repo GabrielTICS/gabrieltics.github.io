@@ -204,8 +204,8 @@ const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
 ========================= */
 (() => {
   const slides = [
-    "assets/hero-1.webp",
     "assets/hero-2.webp",
+    "assets/hero-1.webp",
     "assets/hero-3.webp"
   ];
 

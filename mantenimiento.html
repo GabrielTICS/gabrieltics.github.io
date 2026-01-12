@@ -4,11 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mantenimiento | Gabriel Antonio</title>
-  <meta name="description" content="Mantenimiento preventivo de laptop: desarmado, limpieza de ventiladores y verificación final." />
+  <meta name="description" content="Mantenimiento preventivo de laptop: desmontaje, limpieza de ventilación y verificación final." />
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+  <!-- NAV -->
   <header class="nav">
     <div class="container nav__inner">
       <a class="brand" href="index.html">Gabriel Antonio</a>
@@ -27,13 +29,14 @@
 
   <main class="container page">
 
+    <!-- HEAD -->
     <section class="section">
       <div class="section__head reveal">
         <p class="kicker">PROYECTO · INFORMÁTICA / SOPORTE IT</p>
         <h1 class="section__title">Mantenimiento preventivo de laptop</h1>
         <p class="section__subtitle">
-          Evidencia del proceso de mantenimiento preventivo: revisión de tornillería, apertura del equipo, limpieza de ventilación,
-          cierre y verificación final. (Este modelo no cuenta con módulos de RAM removibles para limpieza).
+          Procedimiento documentado de mantenimiento preventivo: preparación, apertura del equipo, limpieza de ventilación,
+          cierre y verificación final. <strong>Este modelo no cuenta con módulos de RAM removibles</strong>, por lo que no se realizó limpieza de RAM.
         </p>
 
         <div class="chips">
@@ -46,93 +49,137 @@
         <div class="note reveal" style="margin-top:14px;">
           <h3 class="note__title">Notas de seguridad</h3>
           <p class="note__text">
-            Antes de iniciar: apagar el equipo, desconectar cargador y trabajar en superficie limpia.
-            Para pantalla: usar líquido para pantallas y paño de microfibra (evitar alcohol isopropílico en la pantalla).
+            Apagar el equipo, desconectar cargador y trabajar en una superficie limpia.
+            Para limpiar la pantalla, usar <strong>líquido para pantallas</strong> y paño de microfibra (evitar alcohol isopropílico en la pantalla).
           </p>
         </div>
       </div>
     </section>
 
+    <!-- PASOS -->
     <section class="section" id="pasos">
       <div class="section__head reveal">
-        <h2 class="section__title">Paso a paso (con evidencias)</h2>
-        <p class="section__subtitle">Da clic en cualquier imagen para verla en grande.</p>
+        <h2 class="section__title">Paso a paso (con evidencia)</h2>
+        <p class="section__subtitle">Haz clic en cualquier imagen para verla en grande.</p>
       </div>
 
-      <div class="grid grid--gallery">
+      <div class="steps">
 
         <!-- 1 -->
-        <figure class="gcard reveal tilt" data-tilt>
-          <img src="assets/mantenimiento/materiales.jpg"
-               alt="Paso 1: Materiales de trabajo (herramientas y limpieza)"
-               loading="lazy" data-lightbox>
-          <figcaption><strong>Paso 1</strong><span>Materiales</span></figcaption>
-        </figure>
+        <article class="step reveal">
+          <a class="step__media" href="assets/mantenimiento/materiales.jpg">
+            <img src="assets/mantenimiento/materiales.jpg" alt="Paso 1: Materiales" loading="lazy" data-lightbox>
+          </a>
+          <div class="step__content">
+            <h3 class="step__title">1) Materiales</h3>
+            <p class="step__text">
+              Se preparan herramientas básicas para el mantenimiento: kit de destornilladores de precisión,
+              brocha para remover polvo, paño y líquido para pantallas. Esto permite trabajar con orden y evitar daños.
+            </p>
+          </div>
+        </article>
 
         <!-- 2 -->
-        <figure class="gcard reveal tilt" data-tilt>
-          <img src="assets/mantenimiento/tornillos.jpg"
-               alt="Paso 2: Identificación de tornillos"
-               loading="lazy" data-lightbox>
-          <figcaption><strong>Paso 2</strong><span>Ver tornillos</span></figcaption>
-        </figure>
+        <article class="step reveal">
+          <a class="step__media" href="assets/mantenimiento/tornillos.jpg">
+            <img src="assets/mantenimiento/tornillos.jpg" alt="Paso 2: Identificación de tornillos" loading="lazy" data-lightbox>
+          </a>
+          <div class="step__content">
+            <h3 class="step__title">2) Identificar tornillos</h3>
+            <p class="step__text">
+              Se revisa la parte inferior para ubicar todos los tornillos y asegurar que se retiren correctamente.
+              Esto evita forzar la tapa o dañar el chasis.
+            </p>
+          </div>
+        </article>
 
         <!-- 3 -->
-        <figure class="gcard reveal tilt" data-tilt>
-          <img src="assets/mantenimiento/destornillar.jpg"
-               alt="Paso 3: Retiro de tornillos con herramienta adecuada"
-               loading="lazy" data-lightbox>
-          <figcaption><strong>Paso 3</strong><span>Destornillar</span></figcaption>
-        </figure>
+        <article class="step reveal">
+          <a class="step__media" href="assets/mantenimiento/destornillar.jpg">
+            <img src="assets/mantenimiento/destornillar.jpg" alt="Paso 3: Destornillar" loading="lazy" data-lightbox>
+          </a>
+          <div class="step__content">
+            <h3 class="step__title">3) Destornillar</h3>
+            <p class="step__text">
+              Se retiran los tornillos utilizando la punta adecuada para no barrerlos. Se recomienda organizar la tornillería
+              para facilitar el armado al final.
+            </p>
+          </div>
+        </article>
 
         <!-- 4 -->
-        <figure class="gcard reveal tilt" data-tilt>
-          <img src="assets/mantenimiento/quitar-tapa.jpg"
-               alt="Paso 4: Retiro de tapa inferior y acceso a componentes"
-               loading="lazy" data-lightbox>
-          <figcaption><strong>Paso 4</strong><span>Quitar la tapa</span></figcaption>
-        </figure>
+        <article class="step reveal">
+          <a class="step__media" href="assets/mantenimiento/quitar-tapa.jpg">
+            <img src="assets/mantenimiento/quitar-tapa.jpg" alt="Paso 4: Quitar tapa" loading="lazy" data-lightbox>
+          </a>
+          <div class="step__content">
+            <h3 class="step__title">4) Retirar la tapa</h3>
+            <p class="step__text">
+              Una vez retirada la tornillería, se separa la tapa inferior con cuidado para acceder a los componentes internos.
+              Se evita usar fuerza excesiva para no romper pestañas.
+            </p>
+          </div>
+        </article>
 
         <!-- 5 -->
-        <figure class="gcard reveal tilt" data-tilt>
-          <img src="assets/mantenimiento/limpiar-ventiladores.jpg"
-               alt="Paso 5: Limpieza de ventiladores y zona de ventilación"
-               loading="lazy" data-lightbox>
-          <figcaption><strong>Paso 5</strong><span>Limpiar ventiladores</span></figcaption>
-        </figure>
+        <article class="step reveal">
+          <a class="step__media" href="assets/mantenimiento/limpiar-ventiladores.jpg">
+            <img src="assets/mantenimiento/limpiar-ventiladores.jpg" alt="Paso 5: Limpiar ventiladores" loading="lazy" data-lightbox>
+          </a>
+          <div class="step__content">
+            <h3 class="step__title">5) Limpiar ventiladores</h3>
+            <p class="step__text">
+              Se limpia cuidadosamente el ventilador y zona de ventilación con brocha para remover polvo acumulado.
+              Esto ayuda a mantener temperaturas estables y reducir ruido.
+            </p>
+          </div>
+        </article>
 
         <!-- 6 -->
-        <figure class="gcard reveal tilt" data-tilt>
-          <img src="assets/mantenimiento/tapar.jpg"
-               alt="Paso 6: Colocar tapa y asegurar tornillería"
-               loading="lazy" data-lightbox>
-          <figcaption><strong>Paso 6</strong><span>Taparlo</span></figcaption>
-        </figure>
+        <article class="step reveal">
+          <a class="step__media" href="assets/mantenimiento/tapar.jpg">
+            <img src="assets/mantenimiento/tapar.jpg" alt="Paso 6: Cerrar el equipo" loading="lazy" data-lightbox>
+          </a>
+          <div class="step__content">
+            <h3 class="step__title">6) Cerrar y asegurar</h3>
+            <p class="step__text">
+              Se coloca nuevamente la tapa inferior y se reinstalan los tornillos. Se recomienda apretar de forma uniforme
+              sin excederse, para evitar dañar roscas.
+            </p>
+          </div>
+        </article>
 
         <!-- 7 -->
-        <figure class="gcard reveal tilt" data-tilt>
-          <img src="assets/mantenimiento/limpiar-pantalla.jpg"
-               alt="Paso 7: Limpieza de pantalla con líquido para pantallas y verificación encendiendo el equipo"
-               loading="lazy" data-lightbox>
-          <figcaption><strong>Paso 7</strong><span>Pantalla + prueba</span></figcaption>
-        </figure>
+        <article class="step reveal">
+          <a class="step__media" href="assets/mantenimiento/limpiar-pantalla.jpg">
+            <img src="assets/mantenimiento/limpiar-pantalla.jpg" alt="Paso 7: Limpieza de pantalla y prueba final" loading="lazy" data-lightbox>
+          </a>
+          <div class="step__content">
+            <h3 class="step__title">7) Limpieza de pantalla + prueba final</h3>
+            <p class="step__text">
+              Se limpia la pantalla con líquido especializado para pantallas y paño de microfibra (sin alcohol isopropílico).
+              Finalmente, se enciende el equipo para verificar que todo funcione correctamente.
+            </p>
+          </div>
+        </article>
 
       </div>
 
-      <div class="note reveal">
+      <div class="note reveal" style="margin-top:18px;">
         <h3 class="note__title">Resultado</h3>
         <p class="note__text">
-          Se realizó limpieza preventiva enfocada en ventilación y superficies externas. Al finalizar se cerró el equipo,
-          se verificó el encendido y funcionamiento general. Nota: este modelo no cuenta con RAM removible, por lo que no se realizó limpieza de módulos.
+          Se realizó mantenimiento preventivo enfocado en limpieza interna de ventilación y revisión general.
+          Tras el armado, se comprobó el encendido y funcionamiento correcto del equipo.
         </p>
       </div>
     </section>
 
+    <!-- CTA -->
     <section class="section section--tight">
       <div class="cta reveal">
         <div>
-          <h2>¿Te interesa este tipo de soporte?</h2>
-          <p>Puedo apoyar con mantenimiento preventivo, limpieza interna y diagnóstico básico.</p>
+          <h2>Soporte y mantenimiento IT</h2>
+          <p>Puedo apoyar con limpieza preventiva, diagnóstico básico y optimización.</p>
         </div>
         <div class="cta__actions">
           <a class="btn btn--primary" href="index.html#contacto">Contactarme</a>
@@ -143,7 +190,7 @@
 
   </main>
 
-  <!-- Lightbox (tu app.js lo controla) -->
+  <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
     <button id="lightboxClose" class="lightbox__close" aria-label="Cerrar">✕</button>
     <img id="lightboxImg" class="lightbox__img" alt="">

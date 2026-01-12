@@ -1,135 +1,98 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#0b1220" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CAD | Gabriel Antonio</title>
-  <meta name="description" content="Proyecto CAD: modelado 3D de componentes mecánicos en Fusion 360." />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Background (igual que index) -->
-  <div class="bg" aria-hidden="true">
-    <div class="bg__grid"></div>
-    <div class="bg__blob bg__blob--a"></div>
-    <div class="bg__blob bg__blob--b"></div>
-  </div>
 
-  <!-- NAV -->
-  <header class="nav" id="siteNav">
+  <!-- NAV (igual que index) -->
+  <header class="nav">
     <div class="container nav__inner">
-      <a class="brand" href="index.html">
-        <span class="brand__logo">G</span>
-        <span class="brand__name">Gabriel Antonio</span>
-      </a>
-
-      <nav class="nav__links" aria-label="Navegación">
-        <a class="navlink" href="index.html#proyectos">Proyectos</a>
-        <a class="navlink" href="index.html#servicios">Servicios</a>
-        <a class="navlink" href="index.html#galeria">Galería</a>
-        <a class="navlink" href="index.html#habilidades">Habilidades</a>
-        <a class="navlink" href="index.html#contacto">Contacto</a>
+      <a class="brand" href="index.html">Gabriel Antonio</a>
+      <nav class="nav__links">
+        <a href="index.html#proyectos">Proyectos</a>
+        <a href="index.html#contacto">Contacto</a>
       </nav>
-
-      <div class="nav__cta">
-        <a class="btn btn--ghost" href="index.html">Volver</a>
-      </div>
-    </div>
-
-    <div class="scroll-progress" aria-hidden="true">
-      <div class="scroll-progress__bar"></div>
     </div>
   </header>
 
   <main class="container page">
-    <!-- HERO / HEAD -->
-    <section class="section section--tight">
-      <div class="section__head reveal">
+
+    <!-- TITULO -->
+    <section class="section">
+      <div class="section__head">
         <p class="kicker">PROYECTO · CAD / 3D</p>
-        <h1 class="section__title">Componentes mecánicos – Modelado 3D (Fusion 360)</h1>
+        <h1 class="section__title">
+          Componentes mecánicos – Modelado 3D (Fusion 360)
+        </h1>
         <p class="section__subtitle">
-          Modelos desarrollados como práctica técnica para demostrar diseño paramétrico, extrusiones, perforaciones y
-          organización de bocetos. Evidencias visuales en distintas vistas.
-        </p>
-
-        <div class="chips" aria-label="Tecnologías">
-          <span class="pill">CAD</span>
-          <span class="pill pill--soft">Fusion 360</span>
-          <span class="pill pill--soft">Diseño paramétrico</span>
-          <span class="pill pill--soft">Perforaciones / Extrusión</span>
-        </div>
-
-        <div class="actions">
-          <a class="btn btn--primary" href="#evidencias">Ver evidencias</a>
-          <a class="btn btn--ghost" href="index.html#contacto">Contactarme</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- EVIDENCIAS -->
-    <div class="grid grid--gallery">
-  <figure class="gcard reveal tilt" data-tilt>
-    <img src="assets/cad-mecanico/pieza-mecanica.png" alt="Pieza mecánica - vista principal" loading="lazy" data-lightbox>
-    <figcaption><strong>Pieza mecánica</strong><span>Vista principal</span></figcaption>
-  </figure>
-
-  <figure class="gcard reveal tilt" data-tilt>
-    <img src="assets/cad-mecanico/pieza-mecanica-lateral.png" alt="Pieza mecánica - vista lateral" loading="lazy" data-lightbox>
-    <figcaption><strong>Pieza mecánica</strong><span>Vista lateral</span></figcaption>
-  </figure>
-
-  <figure class="gcard reveal tilt" data-tilt>
-    <img src="assets/cad-mecanico/pieza-mecanica-reversa.png" alt="Pieza mecánica - vista reversa" loading="lazy" data-lightbox>
-    <figcaption><strong>Pieza mecánica</strong><span>Vista reversa</span></figcaption>
-  </figure>
-
-  <figure class="gcard reveal tilt" data-tilt>
-    <img src="assets/cad-mecanico/pieza-mecanica-cotas.png" alt="Pieza mecánica - cotas" loading="lazy" data-lightbox>
-    <figcaption><strong>Pieza mecánica</strong><span>Vista con cotas</span></figcaption>
-  </figure>
-</div>
-
-
-      <!-- Descripción técnica -->
-      <div class="note reveal">
-        <h3 class="note__title">Resumen técnico</h3>
-        <p class="note__text">
-          Los modelos fueron creados mediante sketches paramétricos y operaciones de extrusión/corte, integrando
-          perforaciones laterales y detalles de acabado. Se priorizó una estructura geométrica consistente y organizada
-          para facilitar futuras modificaciones.
+          Modelado 3D de componentes mecánicos realizado en Fusion 360 como práctica técnica,
+          aplicando diseño paramétrico, extrusiones y perforaciones.
         </p>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="section section--tight">
-      <div class="cta reveal">
-        <div>
-          <h2>¿Quieres ver más evidencias?</h2>
-          <p>Si lo deseas, puedo compartir un documento con capturas adicionales o renders.</p>
-        </div>
-        <div class="cta__actions">
-          <a class="btn btn--primary" href="index.html#contacto">Contactarme</a>
-          <a class="btn btn--ghost" href="index.html">Volver al inicio</a>
-        </div>
+    <!-- GALERÍA -->
+    <section class="section">
+      <div class="grid grid--gallery">
+
+        <figure class="gcard">
+          <img src="assets/cad-mecanico/pieza-mecanica.png"
+               alt="Pieza mecánica - vista principal"
+               data-lightbox>
+          <figcaption><strong>Pieza mecánica</strong><span>Vista principal</span></figcaption>
+        </figure>
+
+        <figure class="gcard">
+          <img src="assets/cad-mecanico/pieza-mecanica-lateral.png"
+               alt="Pieza mecánica - vista lateral"
+               data-lightbox>
+          <figcaption><strong>Pieza mecánica</strong><span>Vista lateral</span></figcaption>
+        </figure>
+
+        <figure class="gcard">
+          <img src="assets/cad-mecanico/pieza-mecanica-reversa.png"
+               alt="Pieza mecánica - vista reversa"
+               data-lightbox>
+          <figcaption><strong>Pieza mecánica</strong><span>Vista reversa</span></figcaption>
+        </figure>
+
+        <figure class="gcard">
+          <img src="assets/cad-mecanico/pieza-mecanica-cotas.png"
+               alt="Pieza mecánica - vista con cotas"
+               data-lightbox>
+          <figcaption><strong>Pieza mecánica</strong><span>Vista con cotas</span></figcaption>
+        </figure>
+
       </div>
     </section>
+
+    <!-- NOTA TÉCNICA -->
+    <section class="section">
+      <div class="note">
+        <h3>Resumen técnico</h3>
+        <p>
+          El proyecto demuestra el uso de bocetos paramétricos, extrusiones, cortes y perforaciones,
+          manteniendo una estructura organizada y coherente para futuras modificaciones.
+        </p>
+      </div>
+    </section>
+
   </main>
 
-  <!-- LIGHTBOX (usa el JS que ya hicimos) -->
+  <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox" aria-hidden="true">
-    <button id="lightboxClose" class="lightbox__close" aria-label="Cerrar">✕</button>
-    <img id="lightboxImg" class="lightbox__img" alt="" />
+    <button id="lightboxClose" class="lightbox__close">✕</button>
+    <img id="lightboxImg" class="lightbox__img" alt="">
     <div id="lightboxCaption" class="lightbox__caption"></div>
   </div>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <p>© <span id="year"></span> Gabriel Antonio · Portafolio</p>
-      <a class="link" href="index.html">Volver</a>
-    </div>
+    <p>© <span id="year"></span> Gabriel Antonio</p>
   </footer>
 
   <script src="app.js"></script>
